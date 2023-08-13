@@ -14,28 +14,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-
-    let payload: ProductOption = {    
-    name : "Angular Test",
-    description : "Testing on angular"
-    }
-    this.optionService.CreateProductOption(payload).subscribe(
-      (res) => console.log(res),
-      (err) => console.log()
-    )
-
-
-
-    this.optionService.GetProductOptions().subscribe(
-      (res) => console.log(res),
-      (err) => console.log()
-    )
-
-
-
-
   }
-
 
   title = 'cr8';
 }

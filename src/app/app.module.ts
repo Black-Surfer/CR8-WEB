@@ -14,12 +14,14 @@ import { SharedModule } from './components/shared/shared/shared.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PasswordMatchDirective } from './core/directive/password-match.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordMatchDirective
   ],
   imports: [
     BrowserModule,

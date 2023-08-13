@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { UserLoginFormModel } from 'src/app/core/models/Request/UserLoginFormModel';
 import { UserService } from 'src/app/core/services/userService.service';
 
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/core/services/userService.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private fb: FormBuilder, private userService: UserService){
+  constructor(private fb: FormBuilder, private userService: UserService, private toastr: ToastrService){
 
   }
 
@@ -31,7 +32,7 @@ export class LoginComponent {
     let payload: UserLoginFormModel = {email: email ?? '', password: password ?? '', rememberMe: true}
     this.userService.loginUser(payload).subscribe(
       (res) => console.log('User sucessfully logged in !!', res),
-      (err) => console.error(err)
+      (err) => this.toastr.error(err)
     )
   }
 

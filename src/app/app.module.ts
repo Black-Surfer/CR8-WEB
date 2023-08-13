@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AdminModule } from './admin/admin.module';
 
@@ -15,6 +15,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PasswordMatchDirective } from './core/directive/password-match.directive';
+import { GlobalErrorHandler } from './core/utility/globalErrorHandler';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { PasswordMatchDirective } from './core/directive/password-match.directiv
     ReactiveFormsModule,
     FlexLayoutModule, 
     NgbModule,
+    ToastrModule.forRoot(),
     
     //feature modules
     AdminModule,
@@ -42,7 +45,8 @@ import { PasswordMatchDirective } from './core/directive/password-match.directiv
     LayoutModule
     
   ],
-  providers: [],
+  providers: [    { provide: ErrorHandler, useClass: GlobalErrorHandler }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

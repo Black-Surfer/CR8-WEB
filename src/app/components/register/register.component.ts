@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { UserRegisterFormModel } from 'src/app/core/models/Request/UserRegisterFormModel';
 import { UserService } from 'src/app/core/services/userService.service';
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/core/services/userService.service';
 export class RegisterComponent implements OnInit {
   passwordControlName: string= 'password';
 
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private fb: FormBuilder,private toastr: ToastrService, private userService: UserService) { }
   registerForm = this.fb.group({
     fullName: [
       '',
@@ -60,7 +61,7 @@ export class RegisterComponent implements OnInit {
     }
     this.userService.registerUser(payload).subscribe(
       (res) => console.log('User created =>',payload),
-      (err) => console.error(err)
+      (err) => this.toastr.error(err)
     )
   }
 }

@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
 
     }
     this.userService.registerUser(payload).subscribe(
-      (res) => console.log('User created =>',payload),
+      (res) => this.toastr.success('User created;'),
       (err) => this.toastr.error(err)
     )
   }

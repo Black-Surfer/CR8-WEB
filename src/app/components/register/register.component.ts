@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { UserRegisterFormModel } from 'src/app/core/models/Request/UserRegisterFormModel';
 import { UserService } from 'src/app/core/services/userService.service';

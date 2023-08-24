@@ -1,5 +1,6 @@
-import { Directive, Input } from '@angular/core';
-import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
+import { Directive, Input } from "@angular/core";
+import { NG_VALIDATORS, Validator, AbstractControl, ValidationErrors } from "@angular/forms";
+
 
 @Directive({
   selector: '[appPasswordMatch]',

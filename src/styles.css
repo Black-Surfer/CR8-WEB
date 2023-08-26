@@ -6,7 +6,12 @@
 @import '~ngx-toastr/toastr';
 
  
-html, body { height: 100%; }
+html, body { height: 100vh; 
+  min-height: 100vh;
+  background-color: purple !important;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;

@@ -5,8 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
-
-
+  {path: '', redirectTo:'/login', pathMatch:'full'},
   { path: 'login', component: LoginComponent, title: 'CR8 | Login' },
   { path: 'register', component: RegisterComponent , title: 'CR8 | Register' },
   {
@@ -20,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

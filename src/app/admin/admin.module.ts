@@ -7,6 +7,7 @@ import { OptionCreateComponent } from './options/option-create/option-create.com
 import { OptionListComponent } from './options/option-list/option-list.component';
 import { OptionDetailsComponent } from './options/option-details/option-details.component';
 import { OptionsService } from './core/services/options.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +21,8 @@ import { OptionsService } from './core/services/options.service';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [DashboardComponent],
   providers: [OptionsService]

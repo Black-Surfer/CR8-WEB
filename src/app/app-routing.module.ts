@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent , title: 'CR8 | Register' },
   {
     path: 'admin',
-    pathMatch: 'full',
     loadChildren: () => import('./admin/admin.module').then(ad => ad.AdminModule)
   },
   {

@@ -14,13 +14,10 @@ const routes: Routes = [
   {
     path: 'options', component: OptionsComponent, children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
-      { path: 'list', component: OptionListComponent, pathMatch:'full' },
-      { path: 'create', component: OptionCreateComponent },
-      { path: 'details/:id', component: OptionDetailsComponent },
+      { path: 'list', component: OptionListComponent},
+      { path: 'create', component: OptionCreateComponent},
+      { path: 'details/:id', component: OptionDetailsComponent},
     ]
-  },
-  {
-    path: '**', component: LoginComponent
   }
 
 ];

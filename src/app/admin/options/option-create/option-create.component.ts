@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { ProductOptionService } from 'src/app/core/services/productOption.service';
 import { ProductOptionForm } from '../../core/model/Request/ProductOptionForm';
-import { ProductOption } from '../../core/model/ProductOption';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ProductOption } from 'src/app/core/models/ProductOption';
 
 @Component({
   selector: 'app-option-create',
@@ -53,7 +53,8 @@ export class OptionCreateComponent {
 
   createOption() {
     const { name, description, productOptionTypes } = this.createOptionForm.value;
-    const payload: ProductOptionForm = {
+    const payload: ProductOption = {
+      id: 0,
       name: name as string,
       description: description as string,
       productOptionTypes: productOptionTypes as ProductOption[]
@@ -61,7 +62,7 @@ export class OptionCreateComponent {
     this.optionService.CreateProductOption(payload).subscribe(
       (res) => { 
         this.toaster.success('option has been created');
-        this.router.navigateByUrl('list');
+        this.router.navigateByUrl('/admin/options/list');
        },
       (err) => this.toaster.error(err.error)
     )

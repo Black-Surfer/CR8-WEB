@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductOption } from 'src/app/core/models/ProductOption';
@@ -26,5 +26,11 @@ export class OptionsService {
   createProductOption(payload: ProductOptionForm){    
     let url = environment.apiURL + 'ProductOption/CreateProductOption';
     return this.httpClient.post(url, payload);
+  }
+
+
+  deleteOption(id:number): Observable<ProductOption>{
+    let url = environment.apiURL + 'ProductOption/DeleteProductOption/'+ id;
+    return this.httpClient.delete<ProductOption>(url);
   }
 }

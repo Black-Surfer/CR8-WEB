@@ -28,8 +28,7 @@ export class OptionDetailsComponent implements OnInit {
       this.id = params.get('id') ?? '';
       this.optionsService.getOption(this.id).subscribe(
         (res) => {
-          const {name, description, productOptionTypes} = res;
-          
+          const {name, description, productOptionTypes} = res;          
           this.optionDetailsForm.setValue({name ,description,productOptionTypes});
         }
       )

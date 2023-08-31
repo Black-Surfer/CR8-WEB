@@ -6,7 +6,7 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Token } from '../models/Token';
+import { LoginTokenModel } from '../models/Response/LoginTokenModel';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
@@ -15,7 +15,7 @@ export class JwtInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('data') as string;
-    const jwtToken = JSON.parse(token) as Token;
+    const jwtToken = JSON.parse(token) as LoginTokenModel;
     if (jwtToken) {
       request = request.clone({
         setHeaders: {

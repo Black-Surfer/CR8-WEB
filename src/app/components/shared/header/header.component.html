@@ -17,7 +17,7 @@
         </ul>
       </div>
       
-      <ul class="d-flex mb-2">
+      <ul class="d-flex mb-2" *ngIf="!isLoggedIn">
         <button class="btn btn-outline-success" routerLink="/register" >Register</button>
         <button class="btn btn-outline-success" routerLink="/login" >Login</button>
       </ul>

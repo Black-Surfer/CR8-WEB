@@ -25,9 +25,19 @@ export class UserService {
   loginUser(payload: UserLoginFormModel): Observable<LoginTokenModel> {
     let createUserUrl = `${this.apiUrl}Account/Login`
     return this.httpClient.post<LoginTokenModel>(createUserUrl, payload).pipe(
-      tap((response: any) => {
+      tap((response: LoginTokenModel) => {
+        response.isLoggedIn = true;
         localStorage.setItem('data', JSON.stringify(response));
       })
     );
+  }
+
+  checkLoggedInUser(): boolean{
+    const token = localStorage.getItem('data') as string;
+    const jwtToken = JSON.parse(token) as LoginTokenModel;    //call api with accessToken to confirm user
+    if(jwtToken != null){
+      return jwtToken.accessToken != null  && jwtToken.username != null && jwtToken.isLoggedIn;
+    }
+    return false;
   }
 }

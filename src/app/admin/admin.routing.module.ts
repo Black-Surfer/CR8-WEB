@@ -10,16 +10,25 @@ import { OptionDetailsComponent } from "./options/option-details/option-details.
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
-  },
-  {
-    path: 'options', component: OptionsComponent, children: [
-      { path: '', redirectTo: 'list', pathMatch: 'full' },
-      { path: 'list', component: OptionListComponent},
-      { path: 'create', component: OptionCreateComponent},
-      { path: 'details/:id', component: OptionDetailsComponent},
+    children: [
+      {
+        path: 'options', component: OptionsComponent, children: [
+          { path: '', redirectTo: 'list', pathMatch: 'full' },
+              { path: 'list', component: OptionListComponent},
+              { path: 'create', component: OptionCreateComponent},
+              { path: 'details/:id', component: OptionDetailsComponent},
+        ]
+      }
     ]
-  }
-
+  },
+  //  {
+  //   path: 'options', component: OptionsComponent, children: [
+  //     { path: '', redirectTo: 'list', pathMatch: 'full' },
+  //     { path: 'list', component: OptionListComponent},
+  //     { path: 'create', component: OptionCreateComponent},
+  //     { path: 'details/:id', component: OptionDetailsComponent},
+  //   ]
+  //  }
 ];
 
 @NgModule({

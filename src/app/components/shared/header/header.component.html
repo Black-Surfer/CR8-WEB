@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav *ngIf="!isLoggedIn" class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" >
         <h1>PAC 8</h1>
@@ -17,7 +17,7 @@
         </ul>
       </div>
       
-      <ul class="d-flex mb-2" *ngIf="!isLoggedIn">
+      <ul class="d-flex mb-2">
         <button class="btn btn-outline-success" routerLink="/register" >Register</button>
         <button class="btn btn-outline-success" routerLink="/login" >Login</button>
       </ul>

@@ -1,12 +1,8 @@
-<div class="container">
-    <h2>
-        Dashboard
-    </h2>
-    <hr>
-
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Customers</button>
-        <button type="button" class="btn btn-secondary">Orders</button>
-        <button type="button" routerLink="options" class="btn btn-secondary">Options</button>
-      </div>
+<div class="flex flex-row h-full justify-strech">
+    <div class="basis-1/4">
+        <app-side-bar></app-side-bar>
+    </div>
+    <div class="basis-3/4">
+        <router-outlet></router-outlet>
+    </div>
 </div>

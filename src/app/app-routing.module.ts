@@ -7,8 +7,8 @@ import { AuthGuard } from './core/guards/AuthGuard';
 
 const routes: Routes = [
   {path: '', redirectTo:'/login', pathMatch:'full'},
-  { path: 'login', component: LoginComponent, title: 'CR8 | Login' },
-  { path: 'register', component: RegisterComponent , title: 'CR8 | Register' },
+  { path: 'login', component: LoginComponent, title: 'PAC8 | Login' },
+  { path: 'register', component: RegisterComponent , title: 'PAC8 | Register' },
   {
     path: 'admin',
     canActivate: [AuthGuard],

@@ -1,4 +1,4 @@
-<form [formGroup]="createOptionForm" (ngSubmit)="createOption()" class="flex gap-4 flex-col justify-items-start w-50">
+<form [formGroup]="createOptionForm" (ngSubmit)="submit()" class="flex gap-4 flex-col justify-items-start w-50">
   <div class="form-group">
     <label id="optionName" for="Name">Name</label>
     <input id="optionName" class="form-control" formControlName="name" name="Name" type="text"
@@ -21,7 +21,7 @@
 
     <ng-container *ngFor="let optionTypeForm of optionTypeForms.controls; let i = index">
 
-      <div class="grid grid-cols-3 mt-1 mb-1 items-center gap-5">
+      <div class="grid grid-cols-3 mt-1 mb-1 items-center gap-5" [formGroupName]="i">
         <div class="col-span-2">
           <input type="text" class="form-control" [id]="'name' + i" placeholder="Enter Option type name" formControlName="name" />
         </div>

@@ -19,7 +19,7 @@ export class OptionListComponent {
   }
 
   goToDetails(id?: number){
-    this.router.navigateByUrl('options/details/'+id);
+    this.router.navigateByUrl('options/create/'+id);
   }
 
   getOptionList(){

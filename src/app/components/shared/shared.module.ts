@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { RouterModule } from '@angular/router';
+import { UserService } from 'src/app/core/services/userService.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
   exports:[
     HeaderComponent,
     SideBarComponent
-  ]
+  ],
+  providers: [UserService]
 })
 export class SharedModule { }

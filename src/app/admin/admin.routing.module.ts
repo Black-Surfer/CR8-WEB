@@ -16,7 +16,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'list', pathMatch: 'full' },
               { path: 'list', component: OptionListComponent, title: 'PAC8 | Options'},
               { path: 'create', component: OptionCreateComponent, title: 'PAC8 | Options | Create'},
-              { path: 'details/:id', component: OptionDetailsComponent, title: 'PAC8 | Options | Details '},
+              { path: 'create/:id', component: OptionCreateComponent, title: 'PAC8 | Options | Edit '},
         ]
       }
     ]

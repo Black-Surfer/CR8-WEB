@@ -20,8 +20,18 @@ export class ProductOptionService {
     return this.httpClient.get<ProductOption[]>(optionUrl);
   }
 
-  CreateProductOption(payload: ProductOption): Observable<ProductOption>{
+  GetProductOption(id: number): Observable<ProductOption>{
+    let optionUrl = `${this.apiUrl}ProductOption/GetProductOption/`+ id;
+    return this.httpClient.get<ProductOption>(optionUrl);
+  }
+
+  AddProductOption(payload: ProductOption): Observable<ProductOption>{
     let optionUrl = `${this.apiUrl}ProductOption/CreateProductOption`
     return this.httpClient.post<ProductOption>(optionUrl, payload);
+  }
+
+  EditProductOption(payload: ProductOption): Observable<ProductOption>{
+    let optionUrl = `${this.apiUrl}ProductOption/UpdateProductOption`
+    return this.httpClient.put<ProductOption>(optionUrl, payload);
   }
 }

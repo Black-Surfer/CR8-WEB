@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { UserRegisterFormModel } from '../models/Request/UserRegisterFormModel';
 import { UserLoginFormModel } from '../models/Request/UserLoginFormModel';
-import { Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { LoginTokenModel } from '../models/Response/LoginTokenModel';
 
 
@@ -14,6 +14,8 @@ import { LoginTokenModel } from '../models/Response/LoginTokenModel';
 export class UserService {
 
   apiUrl: string = environment.apiURL;
+  isLoggedIn$ = new BehaviorSubject<boolean>(false);
+  userLoginStatus: Observable<boolean> = this.isLoggedIn$.asObservable();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -28,6 +30,7 @@ export class UserService {
       tap((response: LoginTokenModel) => {
         response.isLoggedIn = true;
         localStorage.setItem('data', JSON.stringify(response));
+        this.isLoggedIn$.next(true);
       })
     );
   }
@@ -39,5 +42,11 @@ export class UserService {
       return jwtToken.accessToken != null  && jwtToken.username != null && jwtToken.isLoggedIn;
     }
     return false;
+  }
+
+  logOut(): Observable<boolean>{
+    //implement API logout function here
+    localStorage.removeItem('data');
+    return of(true);
   }
 }

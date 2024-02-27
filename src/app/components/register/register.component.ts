@@ -14,7 +14,15 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder,private toastr: ToastrService, private userService: UserService, private router: Router) { }
   registerForm = this.fb.group({
-    fullName: [
+    firstName: [
+      '',
+      Validators.compose([Validators.required, Validators.minLength(3)]),
+    ],
+    lastName: [
+      '',
+      Validators.compose([Validators.required, Validators.minLength(3)]),
+    ],
+    phoneNumber: [
       '',
       Validators.compose([Validators.required, Validators.minLength(3)]),
     ],
@@ -35,8 +43,16 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  get fullName(){
+  get firstName(){
     return this.registerForm.get('fullName');
+  }
+
+  get lastName(){
+    return this.registerForm.get('lastName');
+  }
+
+  get phoneNumber(){
+    return this.registerForm.get('phoneNumber');
   }
 
   get emailAddress(){
@@ -52,9 +68,11 @@ export class RegisterComponent implements OnInit {
   }
 
   submitRegisterForm(){
-    const { fullName, emailAddress, password, confirmPassword} = this.registerForm.value;
+    const { firstName, lastName, phoneNumber, emailAddress, password, confirmPassword} = this.registerForm.value;
     var payload: UserRegisterFormModel = {
-      fullname: fullName ?? '',
+      firstname: firstName ?? '',
+      lastname: lastName ?? '',
+      phonenumber: phoneNumber ?? '',
       email: emailAddress ?? '',
       password: password ?? '',
       confirmPassword: confirmPassword ?? '',

@@ -1,4 +1,35 @@
-.form-container {
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+
+
+/* button {
+  width: 30%;
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+
+
+
+
+
+/* .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,4 +69,4 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+  } */

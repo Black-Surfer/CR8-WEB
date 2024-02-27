@@ -1,16 +1,45 @@
-.form-container {
+input,
+textarea {
+  width: 50%;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+button {
+  width: 504px;
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: purple;
+    width: 100%;
+    height: auto;
   }
   
   .flex-form {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    max-width: 600px;
+    max-width: 800px;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
@@ -38,4 +67,4 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+  } */

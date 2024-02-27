@@ -1,5 +1,85 @@
-<div class="form-container">
+<div class="pl-16 pr-16 ">
   <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()" class="flex-form">
+    <div class="pt-5 pb-3"><h1>Register</h1></div>
+    <div class="form-group">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="name" formControlName="firstName" placeholder="Your First Name" class="bg-[#D9D9D9] mb-4">
+
+      <label *ngIf="firstName?.invalid && (firstName?.touched || firstName?.dirty)" for="name"><sup>*</sup>First Name is
+        required</label>
+    </div>
+    <div class="form-group">
+      <label for="name">Last Name:</label>
+      <input type="text" id="name" name="name" formControlName="lastName" placeholder="Your Last Name" class="bg-[#D9D9D9] mb-4">
+
+      <label *ngIf="lastName?.invalid && (lastName?.touched || lastName?.dirty)" for="name"><sup>*</sup>Last Name is
+        required</label>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" formControlName="phoneNumber" placeholder="Your Phone Number" class="bg-[#D9D9D9] mb-4">
+
+      <label *ngIf="phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)" for="name"><sup>*</sup>Phone Number is
+      required</label>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" formControlName="emailAddress" placeholder="Your Email" class="bg-[#D9D9D9] mb-4">
+
+      <label *ngIf="emailAddress?.invalid && (emailAddress?.touched || emailAddress?.dirty)"
+        for="name"><sup>*</sup>Email is required</label>
+    </div>
+    <div class="form-group">  
+      <label for="message">Password:</label>
+      <input id="password" name="Password" formControlName="password" type="password" placeholder="Your password" class="bg-[#D9D9D9] mb-4">
+      <label *ngIf="password?.invalid && (password?.touched || password?.dirty)" for="name"><sup>*</sup>Password
+        required</label>
+    </div>
+    <div class="form-group">
+      <label for="message">Confirm Password:</label>
+      <input id="confirmPassword" name="ConfirmPassword" formControlName="confirmPassword" type="password"
+        [appPasswordMatch]="passwordControlName" placeholder="Confirm your password" class="bg-[#D9D9D9] "/>
+        <div *ngIf="registerForm.get('confirmPassword')?.hasError('passwordMismatch')">Password do not match</div>
+    </div>
+    <div class="flex flex-row flex-gap-x-2">
+      <input type="checkbox" id="checkBox" name="CheckBox" value="checkBox">
+      <label for="checkbox"> I have a read the terms and conditons</label>
+    </div>  
+  
+
+    <button type="submit" [disabled]="registerForm.invalid" class="mt-5 mb-3">Submit</button>
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="form-container">
+  <form [formGroup]="registerForm" (ngSubmit)="submitRegisterForm()" class="flex-form">
+    <div><h1>Register</h1></div>
+    <div class="form-group">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="name" formControlName="firstName" placeholder="Your First Name" class="bg-[#D9D9D9] mb-4">
+
+      <label *ngIf="firstName?.invalid && (firstName?.touched || firstName?.dirty)" for="name"><sup>*</sup>First Name is
+        required</label>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name:</label>
+      <input type="text" id="name" name="name" formControlName="lastName" placeholder="Your Last Name" class="bg-[#D9D9D9] mb-4">
+
+      <label *ngIf="lastName?.invalid && (lastName?.touched || lastName?.dirty)" for="name"><sup>*</sup>Last Name is
+        required</label>
+    </div>
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" formControlName="fullName" placeholder="Your Name">
@@ -12,10 +92,9 @@
       <input type="email" id="email" name="email" formControlName="emailAddress" placeholder="Your Email">
 
       <label *ngIf="emailAddress?.invalid && (emailAddress?.touched || emailAddress?.dirty)"
-        for="name"><sup>*</sup>Email is
-        required</label>
+        for="name"><sup>*</sup>Email is required</label>
     </div>
-    <div class="form-group">
+    <div class="form-group">  
       <label for="message">Password:</label>
       <input id="password" name="Password" formControlName="password" type="password" placeholder="Your password" />
       <label *ngIf="password?.invalid && (password?.touched || password?.dirty)" for="name"><sup>*</sup>Password
@@ -28,8 +107,13 @@
         <div *ngIf="registerForm.get('confirmPassword')?.hasError('passwordMismatch')">Password do not match</div>
     </div>
 
+    <div class="flex flex-row justify-start items-start" >
+      <input type="checkbox" class="min-w-0 h-[24px]" id="checkBox" name="CheckBox" value="checkBox">
+      <label for="checkbox"> I have a read the terms and conditons</label>
+    </div> 
+
     <button type="submit" [disabled]="registerForm.invalid" class="mt-2">Submit</button>
     <button type="button" routerLink="/" class="mt-2 btn-danger">Cancel</button>
 
   </form>
-</div>
+</div> -->

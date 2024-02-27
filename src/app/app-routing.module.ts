@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './core/guards/AuthGuard';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo:'/login', pathMatch:'full'},
   { path: 'login', component: LoginComponent, title: 'PAC8 | Login' },
   { path: 'register', component: RegisterComponent , title: 'PAC8 | Register' },
+  { path: 'home', component: HomeComponent , title: 'PAC8 | Home' },
   {
     path: 'admin',
     canActivate: [AuthGuard],

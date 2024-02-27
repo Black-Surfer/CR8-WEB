@@ -18,13 +18,16 @@ import { PasswordMatchDirective } from './core/directive/password-match.directiv
 import { GlobalErrorHandler } from './core/utility/globalErrorHandler';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtInterceptor } from './core/interceptors/jwt-interceptor';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordMatchDirective
+    PasswordMatchDirective,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,29 @@
-input,
-textarea {
-  width: 50%;
-  padding: 15px;
-  border: 1px solid #ccc;
-}
 
-label {
+/* label {
   display: block;
   margin-bottom: 5px;
+
 }
 
+.checkbox-label{
+  display: inline;
+} */
+
 button {
-  width: 504px;
+  width: 40%;
   padding: 10px;
   background-color: purple;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 

@@ -1,0 +1,44 @@
+<form [formGroup]="createOptionForm" (ngSubmit)="submit()" class="flex gap-4 flex-col justify-items-start w-50">
+  <div class="form-group">
+    <label id="optionName" for="Name">Name</label>
+    <input id="optionName" class="form-control" formControlName="name" name="Name" type="text"
+      placeholder="Enter option name" />
+    <label *ngIf="name?.invalid && (name?.touched || name?.dirty)"></label>
+  </div>
+
+  <div class="form-group">
+    <label id="optionDescription" for="description">Description</label>
+    <input id="optionDescription" formControlName="description" class="form-control" name="description"
+      placeholder="Enter option description" type="text" />
+    <label *ngIf="description?.invalid && (description?.touched || description?.dirty)"></label>
+  </div>
+
+  <div formArrayName="productOptionTypes" style="height: 35vh;" class="overflow-auto">
+
+    <button type="button" (click)="addOptionTypes()" class="btn btn-primary">
+      Add An Option Type
+    </button>
+
+    <ng-container *ngFor="let optionTypeForm of optionTypeForms.controls; let i = index">
+
+      <div class="grid grid-cols-3 mt-1 mb-1 items-center gap-5" [formGroupName]="i">
+        <div class="col-span-2">
+          <input type="text" class="form-control" [id]="'name' + i" placeholder="Enter Option type name" formControlName="name" />
+        </div>
+        <button class="btn btn-danger col-start " type="button" (click)="removeOptionTypeForm(i)">
+          Delete
+        </button>
+
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="flex justify-center gap-4">
+    <button type="submit"
+      class="transition btn btn-dark ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+      Save Changes
+    </button>
+    <button type="button" routerLink="/admin/options/list"
+      class="transition btn btn-secondary ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ">Cancel</button>
+  </div>
+</form>

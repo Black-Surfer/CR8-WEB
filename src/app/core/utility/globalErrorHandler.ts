@@ -9,7 +9,7 @@ export class GlobalErrorHandler implements ErrorHandler {
 
     handleError(error: any): void {
     // Handle the error here
-    console.error('Global Error:', error);
+    console.log('Global Error:', error);
     
     // Show a toastr notification
     }

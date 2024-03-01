@@ -8,7 +8,8 @@
  
 html, body { height: 100vh; 
   min-height: 100vh;
-  background-color: purple !important;
+  background-color: white !important;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -19,3 +20,12 @@ body {
   min-height: 100vh;
   background: #e2e2e2;
 }
+
+.center-form-white-backdround{
+  display: flex;
+  background-color: whitesmoke;
+  justify-items: center;
+  align-items: start;
+  height: 80vh;
+}
+

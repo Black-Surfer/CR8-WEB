@@ -1,4 +1,53 @@
-<div class="form-container">
+<div class="pl-16 pr-16">
+  <div class="pt-40 pb-5">
+    <h1>Log in</h1>
+  </div>
+  <div class="grid grid-cols-2 gap-10">
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+        <div class="form-group mb-4">
+          <label for="email">User ID</label>
+          <input type="email" id="email" name="email" formControlName="email" placeholder=" " class="bg-[#D9D9D9] ">
+    
+          <label class="text-purple" *ngIf="email?.invalid && (email?.touched || email?.dirty)"
+            for="name"><sup>*</sup>Email is
+            required</label>
+        </div>
+        <div class="form-group">
+          <label for="message">Password</label>
+          <input id="password" name="Password" formControlName="password" type="password" placeholder=" " class="bg-[#D9D9D9]" >
+          <label  class="text-purple" *ngIf="password?.invalid && (password?.touched || password?.dirty)" for="name"><sup>*</sup>Password
+            required</label>
+        </div>
+    
+        <!-- <button type="submit" [disabled]="loginForm.invalid" class="mt-2">Submit</button> -->
+      </form>
+      <div class="pt-4"> <p>Don't have an account with us? <a href="#">Register here</a></p></div>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <div class="flex gap-2">
+        <div class="pb-5  pt-5 w-28 bg-[#240032]"></div>
+        <div class="pb-5  pt-5 w-28 bg-[#160020]"></div>
+      </div>
+      <div class="flex gap-2">
+        <div class="pb-5  pt-5 w-28 bg-[#440065]"></div>
+        <div class="pb-5  pt-5 w-28 bg-[#3C0052]"></div>
+        <div class="pb-5  pt-5 w-28 bg-[#330044]"></div>
+      </div>
+    </div>
+
+
+    <!-- <div class="box-container">
+      <div class="grid grid-cols-2 gap-x-0 w-full">
+        <div class="pb-5  pt-5 w-28 bg-[#D9D9D9]"></div>
+        <div class="pb-5  pt-5 w-28 bg-[#D9D9D9]"></div>
+      </div>
+
+    </div> -->
+  </div>
+</div>
+<!-- <div class="form-container">
     <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="flex-form">
       <div class="form-group">
         <label for="email">Email:</label>
@@ -17,4 +66,4 @@
   
       <button type="submit" [disabled]="loginForm.invalid" class="mt-2">Submit</button>
     </form>
-  </div>
+  </div> -->

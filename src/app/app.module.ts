@@ -19,6 +19,9 @@ import { GlobalErrorHandler } from './core/utility/globalErrorHandler';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtInterceptor } from './core/interceptors/jwt-interceptor';
 import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CreateOrderComponent } from './components/home/create-order/create-order.component';
+
 
 
 @NgModule({
@@ -28,12 +31,16 @@ import { HomeComponent } from './components/home/home.component';
     RegisterComponent,
     PasswordMatchDirective,
     HomeComponent,
+    NotFoundComponent,
+    CreateOrderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+  
+
     
     //form
     FormsModule,

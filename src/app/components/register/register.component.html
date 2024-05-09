@@ -42,16 +42,16 @@
           [appPasswordMatch]="passwordControlName" placeholder="Confirm your password" class="bg-[#D9D9D9] mb-4"/>
           <div *ngIf="registerForm.get('confirmPassword')?.hasError('passwordMismatch')">Password do not match</div>
       </div>
-      <div class="flex items-start">  
-        <input type="checkbox" id="checkBox" name="CheckBox" value="checkBox">
-        <label for="checkBox" class="ml-2">I have read the terms and conditions</label>
+      <div class="flex">  
+        <input type="checkbox" id="checkBox" name="CheckBox" value="checkBox" >
+        <span><p>I have read the terms and conditions</p></span>
       </div>
     
   
       <button type="submit" [disabled]="registerForm.invalid" class="mt-5 mb-3">Submit</button>
     </form>
   </div>
-  <div class="flex-1 w-full">
+  <div class="flex-1 w-full h-full">
     column 2
   </div>
 

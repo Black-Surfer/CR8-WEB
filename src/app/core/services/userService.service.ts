@@ -41,7 +41,7 @@ export class UserService {
     if(jwtToken != null){
       return jwtToken.accessToken != null  && jwtToken.username != null && jwtToken.isLoggedIn;
     }
-    return false;
+    return true;
   }
 
   logOut(): Observable<boolean>{

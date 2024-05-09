@@ -20,9 +20,9 @@
             required</label>
         </div>
     
-        <!-- <button type="submit" [disabled]="loginForm.invalid" class="mt-2">Submit</button> -->
+        <button type="submit" [disabled]="loginForm.invalid" class="mt-2">Submit</button> 
       </form>
-      <div class="pt-4"> <p>Don't have an account with us? <a href="#">Register here</a></p></div>
+      <div class="pt-4"> <p>Don't have an account with us?  <a [routerLink]="['/register']">Register here</a></p></div>
     </div>
 
     <div class="flex flex-col gap-3">

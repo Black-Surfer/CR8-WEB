@@ -4,13 +4,18 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './core/guards/AuthGuard';
 import { HomeComponent } from './components/home/home.component';
+import { OptionsComponent } from './admin/options/options.component';
+import { OptionCreateComponent } from './admin/options/option-create/option-create.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo:'/login', pathMatch:'full'},
+  {path: '', redirectTo:'/home', pathMatch:'full'},
   { path: 'login', component: LoginComponent, title: 'PAC8 | Login' },
   { path: 'register', component: RegisterComponent , title: 'PAC8 | Register' },
   { path: 'home', component: HomeComponent , title: 'PAC8 | Home' },
+  //move to admin
+  //{ path: 'options', component: OptionsComponent , title: 'PAC8 | Options' },
   {
     path: 'admin',
     canActivate: [AuthGuard],
@@ -20,6 +25,10 @@ const routes: Routes = [
     path: 'my',
     canActivate: [AuthGuard],
     loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
+  },
+  {
+    path: '**', pathMatch: 'full',
+    component: NotFoundComponent
   }
 ];
 

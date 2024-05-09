@@ -9,6 +9,11 @@ import { OptionDetailsComponent } from './options/option-details/option-details.
 import { OptionsService } from './core/services/options.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../components/shared/shared.module';
+import {HttpClientModule} from '@angular/common/http';
+import { AdminReportComponent } from './dashboard/admin-report/admin-report.component';
+import { OrdersComponent } from './dashboard/orders/orders.component';
+import { InvoiceComponent } from './dashboard/invoice/invoice.component';
+import { MessagesComponent } from './dashboard/messages/messages.component';
 
 
 
@@ -18,13 +23,18 @@ import { SharedModule } from '../components/shared/shared.module';
     OptionsComponent,
     OptionCreateComponent,
     OptionListComponent,
-    OptionDetailsComponent
+    OptionDetailsComponent,
+    AdminReportComponent,
+    OrdersComponent,
+    InvoiceComponent,
+    MessagesComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   exports: [DashboardComponent],
   providers: [OptionsService]

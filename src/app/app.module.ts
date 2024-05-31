@@ -21,6 +21,9 @@ import { JwtInterceptor } from './core/interceptors/jwt-interceptor';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CreateOrderComponent } from './components/home/create-order/create-order.component';
+import { ProductListComponent } from './components/home/create-order/product-list/product-list.component';
+import { SearchComponent } from './components/home/create-order/search/search.component';
+import { ProductDetailsComponent } from './components/home/create-order/product-details/product-details.component';
 
 
 
@@ -33,6 +36,9 @@ import { CreateOrderComponent } from './components/home/create-order/create-orde
     HomeComponent,
     NotFoundComponent,
     CreateOrderComponent,
+    ProductListComponent,
+    SearchComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,

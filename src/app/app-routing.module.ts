@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { OptionsComponent } from './admin/options/options.component';
 import { OptionCreateComponent } from './admin/options/option-create/option-create.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CreateOrderComponent } from './components/home/create-order/create-order.component';
+import { ProductDetailsComponent } from './components/home/create-order/product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'PAC8 | Login' },
   { path: 'register', component: RegisterComponent , title: 'PAC8 | Register' },
   { path: 'home', component: HomeComponent , title: 'PAC8 | Home' },
+  { path: 'create-order', component: CreateOrderComponent , title: 'PAC8 | Create Order' },
+  {path: 'product-details/:id', component: ProductDetailsComponent, title: 'PAC8 | Product Details'},
   //move to admin
   //{ path: 'options', component: OptionsComponent , title: 'PAC8 | Options' },
   {

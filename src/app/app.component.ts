@@ -1,20 +1,13 @@
 import { Component } from '@angular/core';
-import { ProductOption } from './core/models/ProductOption';
-import { ProductOptionService } from './core/services/productOption.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
-  constructor(private optionService: ProductOptionService){
-
-  }
-
-  ngOnInit() {
-  }
-
-  title = 'cr8';
+  title = 'cr8-web';
 }

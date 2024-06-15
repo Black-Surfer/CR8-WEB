@@ -10,6 +10,7 @@ import { AdminReportComponent } from "./dashboard/admin-report/admin-report.comp
 import { OrdersComponent } from "./dashboard/orders/orders.component";
 import { InvoiceComponent } from "./dashboard/invoice/invoice.component";
 import { MessagesComponent } from "./dashboard/messages/messages.component";
+import { ProductsComponent } from "./dashboard/products/products.component";
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
               { path: 'create', component: OptionCreateComponent, title: 'PAC8 | Options | Create'},
               { path: 'create/:id', component: OptionCreateComponent, title: 'PAC8 | Options | Edit '},
         ]
+      },
+      {
+        path: 'products', component: ProductsComponent,
       },
       {
         path: 'orders', component: OrdersComponent,

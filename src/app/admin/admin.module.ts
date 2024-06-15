@@ -14,6 +14,7 @@ import { AdminReportComponent } from './dashboard/admin-report/admin-report.comp
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { InvoiceComponent } from './dashboard/invoice/invoice.component';
 import { MessagesComponent } from './dashboard/messages/messages.component';
+import { ProductsComponent } from './dashboard/products/products.component';
 
 
 
@@ -27,7 +28,8 @@ import { MessagesComponent } from './dashboard/messages/messages.component';
     AdminReportComponent,
     OrdersComponent,
     InvoiceComponent,
-    MessagesComponent
+    MessagesComponent,
+    ProductsComponent
   ],
   imports: [
     CommonModule,

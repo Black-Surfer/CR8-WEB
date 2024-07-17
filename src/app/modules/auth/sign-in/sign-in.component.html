@@ -101,13 +101,14 @@
 
         <!-- Submit button -->
         <button
-          class="fuse-mat-button-large w-full mt-6"
+          class="fuse-mat-button-large w-full mt-6 bg-gradient-to-r from-[#240032] via-[#160120] to-[#0E0313]"
           mat-flat-button
-          [color]="'primary'"
           [disabled]="signInForm.disabled"
           (click)="signIn()"
         >
-          <span *ngIf="!signInForm.disabled"> Sign in </span>
+          <span *ngIf="!signInForm.disabled" class="text-[white]">
+            Sign in
+          </span>
           <mat-progress-spinner
             *ngIf="signInForm.disabled"
             [diameter]="24"
@@ -147,7 +148,7 @@
     </div>
   </div>
   <div
-    class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-l"
+    class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden bg-gradient-to-r from-[#240032] via-[#160120] to-[#0E0313] dark:border-l"
   >
     <!-- Background - @formatter:off -->
     <!-- Rings -->
@@ -200,12 +201,13 @@
     <div class="z-10 relative w-full max-w-2xl">
       <div class="text-7xl font-bold leading-none text-gray-100">
         <div>Welcome to</div>
-        <div>our community</div>
+        <div>PAC 8</div>
       </div>
       <div class="mt-6 text-lg tracking-tight leading-6 text-gray-400">
-        Fuse helps developers to build organized and well coded dashboards full
-        of beautiful and rich modules. Join us and start building your
-        application today.
+        Transform your creative ideas into stunning product designs with PAC 8.
+        Whether you're an experienced designer or just starting out, our
+        platform offers powerful tools and a user-friendly interface to help you
+        bring your visions to life.
       </div>
       <div class="flex items-center mt-8">
         <div class="flex flex-0 items-center -space-x-1.5">

@@ -44,18 +44,4 @@ export const appRoutes: Routes = [
       },
     ],
   },
-
-  // {
-  //   path: '',
-  //   component: LayoutComponent,
-  //   data: {
-  //     layout: 'empty',
-  //   },
-  //   children: [
-  //     {
-  //       path: 'home',
-  //       loadChildren: () => import('./modules/landing/home/home.routes'),
-  //     },
-  //   ],
-  // },
 ];

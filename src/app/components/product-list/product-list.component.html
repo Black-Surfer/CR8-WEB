@@ -1,0 +1,34 @@
+<div
+  class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center align-items-center"
+>
+  <div
+    class="m-2 px-3 py-3 border-solid border-2 bg-[#F9F7F7] hover:bg-[#D9D9D9] hover:scale-105"
+    *ngFor="let prod of products"
+    [routerLink]="['/product-details', prod.id]"
+  >
+    <div>
+      <div class="float-right text-lg p-1 bg-[#ffc000] text-[#282828]">
+        75% OFF
+      </div>
+    </div>
+    <div class="w-[250px] h-[250px]">
+      <img [src]="prod.imageURL" />
+    </div>
+    <div class="text-xl font-semibold text-white">{{ prod.price }}</div>
+    <div class="mt-2 text-sm text-[#282828]">{{ prod.name }}</div>
+    <div class="text-xs text-[#999] mt-[7px]">{{ prod.size }}</div>
+    <div class="text-xs text-[#999] mt-[7px]">{{ prod.items_left }}</div>
+    <div class="text-xs text-[#999] mt-[7px]">{{ prod.color }}</div>
+    <div
+      class="text-xs text-[#999] mt-[7px]"
+      [ngStyle]="{
+        fontWeight: 'bold',
+        color: prod.is_in_inventory ? 'green' : 'red'
+      }"
+    >
+      {{
+        prod.is_in_inventory ? "Available in Stock" : "Not available in stock"
+      }}
+    </div>
+  </div>
+</div>

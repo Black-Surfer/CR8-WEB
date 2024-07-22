@@ -44,4 +44,7 @@ export const appRoutes: Routes = [
       },
     ],
   },
+  // // 404 & Catch all
+  // {path: '404-not-found', pathMatch: 'full', loadChildren: () => import('app/modules/admin/pages/error/error-404/error-404.routes')},
+  // {path: '**', redirectTo: '404-not-found'}
 ];

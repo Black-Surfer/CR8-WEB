@@ -23,7 +23,6 @@
         </a>
       </div>
 
-      <!-- Alert -->
       <fuse-alert
         class="mt-8"
         *ngIf="showAlert"
@@ -37,7 +36,6 @@
 
       <!-- Sign Up form -->
       <form class="mt-8" [formGroup]="signUpForm" #signUpNgForm="ngForm">
-        <!-- Name field -->
         <mat-form-field class="w-full">
           <mat-label>First name</mat-label>
           <input id="firstName" matInput [formControlName]="'firstName'" />
@@ -46,7 +44,6 @@
           </mat-error>
         </mat-form-field>
 
-        <!-- Name field -->
         <mat-form-field class="w-full">
           <mat-label>Last name</mat-label>
           <input id="lastName" matInput [formControlName]="'lastName'" />
@@ -55,7 +52,6 @@
           </mat-error>
         </mat-form-field>
 
-        <!-- Name field -->
         <mat-form-field class="w-full">
           <mat-label>Phone Number</mat-label>
           <input id="phoneNumber" matInput [formControlName]="'phoneNumber'" />

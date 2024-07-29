@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Products } from 'app/core/models/products';
+import { Product } from 'app/core/models/products';
 import { ProductsService } from 'app/services/products.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { ProductsService } from 'app/services/products.service';
   styleUrl: './app-list.component.scss',
 })
 export class AppListComponent implements OnInit {
-  @Input() listResult: Products[];
+  @Input() listResult: Product[];
   // @Input() searchTerm: string = '';
   // products: Products[] = [];
   // filteredProducts: Products[] = [];

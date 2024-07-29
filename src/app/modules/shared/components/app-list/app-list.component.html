@@ -73,6 +73,7 @@
   <div class="flex flex-wrap gap-6 justify-center">
     <div
       *ngFor="let item of listResult"
+      [routerLink]="['product-detail', item.id]"
       class="bg-white rounded-lg shadow-lg p-4 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
     >
       <img

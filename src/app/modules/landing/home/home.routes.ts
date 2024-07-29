@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LandingHomeComponent } from './home.component';
-import { ProductSearchComponent } from '../product-search/product-search.component';
-import { ProductListComponent } from 'app/components/product-list/product-list.component';
+import { ProductSearchComponent } from '../product/product-search/product-search.component';
+import { ProductDetailComponent } from '../product/product-detail/product-detail.component';
 
 export default [
   {
@@ -13,7 +13,7 @@ export default [
     component: ProductSearchComponent,
   },
   {
-    path: 'products',
-    component: ProductListComponent,
+    path: 'product-detail/:id',
+    component: ProductDetailComponent,
   },
 ] as Routes;

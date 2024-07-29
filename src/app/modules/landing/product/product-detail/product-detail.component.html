@@ -1,0 +1,81 @@
+<div class="w-full h-full" *ngIf="product">
+  <div
+    class="flex flex-col sm:flex-row max-w-[90%] lg:max-w-[75%] m-auto h-auto sm:h-[80vh] mt-[5%]"
+  >
+    <div class="w-full sm:w-1/2 p-[30px] flex justify-center items-center">
+      <img [src]="product.imageURL" class="w-[70%] h-auto sm:h-[70%]" />
+    </div>
+
+    <div
+      class="w-full sm:w-1/2 pt-[50px] pr-[30px] pb-[50px] pl-[30px] sm:pl-[50px] sm:pr-[100px]"
+    >
+      <div class="mt-5 mb-5">
+        <h3 class="text-2xl font-bold">{{ product.name }}</h3>
+        <h4 class="text-lg text-green-600">
+          Price: <small>$</small>{{ product.price }}
+        </h4>
+        <div class="flex items-center mt-4">
+          <h5 class="mr-2">Color:</h5>
+          <span
+            class="w-[25px] h-[25px] bg-[#E0D1D1] rounded-full mr-[10px]"
+          ></span>
+          <span
+            class="w-[25px] h-[25px] bg-[#1B21A6] rounded-full mr-[10px]"
+          ></span>
+          <span
+            class="w-[25px] h-[25px] bg-[#FA0000] rounded-full mr-[10px]"
+          ></span>
+        </div>
+        <h6 class="mt-4 text-gray-600">
+          Description: {{ product.description }}
+        </h6>
+        <h5 class="mt-4">Number</h5>
+        <div class="flex items-center mt-2">
+          <button
+            class="w-[25px] h-[25px] border-2 text-center"
+            (click)="decreaseQuantity()"
+          >
+            -
+          </button>
+          <label
+            class="w-[40px] h-[35px] border-2 text-center flex justify-center items-center mx-[10px] rounded-full"
+            >{{ quantity }}</label
+          >
+          <button
+            class="w-[25px] h-[25px] border-2 text-center"
+            (click)="increaseQuantity()"
+          >
+            +
+          </button>
+        </div>
+        <button
+          class="w-full p-[10px] bg-black text-white mt-8 sm:mt-[20%] rounded-full"
+          (click)="addToCart()"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-card *ngIf="product" class="m-4 p-4">
+  <div class="flex flex-col md:flex-row">
+    <img
+      [src]="product.imageURL"
+      alt="{{ product.name }}"
+      class="w-full md:w-1/2 object-cover"
+    />
+    <div class="md:ml-4 mt-4 md:mt-0">
+      <h1 class="text-2xl font-bold">{{ product.name }}</h1>
+      <p class="text-gray-600">{{ product.description }}</p>
+      <p class="text-xl mt-2">
+        Price: <span class="text-green-600">${{ product.price }}</span>
+      </p>
+      <p class="mt-2">Rating: {{ product.rating }}</p>
+      <button mat-raised-button color="primary" class="mt-4">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</mat-card> -->

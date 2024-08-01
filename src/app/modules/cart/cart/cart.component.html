@@ -1,0 +1,34 @@
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-4">Your cart</h1>
+  <div class="bg-white shadow-md rounded-lg p-4">
+    <ul class="space-y-4">
+      <li
+        *ngFor="let item of cartItems"
+        class="flex justify-between items-center border-b pb-2"
+      >
+        <span class="font-medium">{{ item.name }}</span>
+        <span class="text-gray-500">{{ item.price | currency : "USD" }}</span>
+      </li>
+
+      <li class="flex justify-between items-center border-b pb-2">
+        <span class="font-medium">Total (USD)</span>
+        <span class="text-gray-500">{{ totalPrice | currency : "USD" }}</span>
+      </li>
+    </ul>
+
+    <div class="flex justify-end space-x-2">
+      <button
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+        (click)="clearCart()"
+      >
+        Clear
+      </button>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        (click)="checkout()"
+      >
+        Checkout
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,36 +1,38 @@
-<!-- <div
-  class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center align-items-center"
+<div
+  class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center items-center"
 >
-  <div
-    class="m-2 px-3 py-3 border-solid border-2 bg-[#F9F7F7] hover:bg-[#D9D9D9] hover:scale-105"
-    *ngFor="let item of listResult"
-  >
-    <div>
-      <div class="float-right text-lg p-1 bg-[#ffc000] text-[#282828]">
-        75% OFF
+  <div class="flex flex-wrap gap-6 justify-center">
+    <div
+      *ngFor="let item of listResult"
+      [routerLink]="['/product-detail', item.id]"
+      class="bg-white rounded-lg shadow-lg p-4 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:bg-[#D9D9D9] hover:scale-105"
+    >
+      <img
+        [src]="item.imageURL"
+        alt="{{ item.name }}"
+        class="w-full h-48 object-cover rounded-t-lg"
+      />
+      <div class="flex flex-col flex-grow p-4">
+        <h2 class="text-xl font-bold mb-2 h-15 overflow-hidden">
+          {{ item.name }}
+        </h2>
+        <p class="text-gray-700 mb-2 h-16 overflow-hidden">
+          {{ item.description }}
+        </p>
+        <p class="text-gray-900 font-semibold mb-2">Size: {{ item.size }}</p>
+        <p class="text-gray-900 font-semibold mb-2">Color: {{ item.color }}</p>
+        <p class="text-gray-900 font-bold mb-2">${{ item.price }}</p>
+        <div class="mt-auto">
+          <button
+            class="bg-[#2c0e39] text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
-    <div class="w-[250px] h-[250px]">
-      <img [src]="item.imageURL" />
-    </div>
-    <div class="text-xl font-semibold text-white">{{ item.price }}</div>
-    <div class="mt-2 text-sm text-[#282828]">{{ item.name }}</div>
-    <div class="text-xs text-[#999] mt-[7px]">{{ item.size }}</div>
-    <div class="text-xs text-[#999] mt-[7px]">{{ item.items_left }}</div>
-    <div class="text-xs text-[#999] mt-[7px]">{{ item.color }}</div>
-    <div
-      class="text-xs text-[#999] mt-[7px]"
-      [ngStyle]="{
-        fontWeight: 'bold',
-        color: item.is_in_inventory ? 'green' : 'red'
-      }"
-    >
-      {{
-        item.is_in_inventory ? "Available in Stock" : "Not available in stock"
-      }}
-    </div>
   </div>
-</div> -->
+</div>
 
 <!-- <div
   class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center align-items-center"
@@ -66,39 +68,3 @@
     </div>
   </div>
 </div> -->
-
-<div
-  class="flex flex-wrap h-full my-20 mx-10 px-10 justify-center items-center"
->
-  <div class="flex flex-wrap gap-6 justify-center">
-    <div
-      *ngFor="let item of listResult"
-      [routerLink]="['product-detail', item.id]"
-      class="bg-white rounded-lg shadow-lg p-4 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
-    >
-      <img
-        [src]="item.imageURL"
-        alt="{{ item.name }}"
-        class="w-full h-48 object-cover rounded-t-lg"
-      />
-      <div class="flex flex-col flex-grow p-4">
-        <h2 class="text-xl font-bold mb-2 h-15 overflow-hidden">
-          {{ item.name }}
-        </h2>
-        <p class="text-gray-700 mb-2 h-16 overflow-hidden">
-          {{ item.description }}
-        </p>
-        <p class="text-gray-900 font-semibold mb-2">Size: {{ item.size }}</p>
-        <p class="text-gray-900 font-semibold mb-2">Color: {{ item.color }}</p>
-        <p class="text-gray-900 font-bold mb-2">${{ item.price }}</p>
-        <div class="mt-auto">
-          <button
-            class="bg-[#2c0e39] text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
-          >
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

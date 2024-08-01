@@ -1,12 +1,13 @@
 import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Product } from 'app/core/models/products';
 import { ProductsService } from 'app/services/products.service';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, RouterModule],
   templateUrl: './app-list.component.html',
   styleUrl: './app-list.component.scss',
 })

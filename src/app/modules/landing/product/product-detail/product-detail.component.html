@@ -50,7 +50,7 @@
         </div>
         <button
           class="w-full p-[10px] bg-black text-white mt-8 sm:mt-[20%] rounded-full"
-          (click)="addToCart()"
+          (click)="addToCart(product)"
         >
           Add to Cart
         </button>
@@ -58,24 +58,3 @@
     </div>
   </div>
 </div>
-
-<!-- <mat-card *ngIf="product" class="m-4 p-4">
-  <div class="flex flex-col md:flex-row">
-    <img
-      [src]="product.imageURL"
-      alt="{{ product.name }}"
-      class="w-full md:w-1/2 object-cover"
-    />
-    <div class="md:ml-4 mt-4 md:mt-0">
-      <h1 class="text-2xl font-bold">{{ product.name }}</h1>
-      <p class="text-gray-600">{{ product.description }}</p>
-      <p class="text-xl mt-2">
-        Price: <span class="text-green-600">${{ product.price }}</span>
-      </p>
-      <p class="mt-2">Rating: {{ product.rating }}</p>
-      <button mat-raised-button color="primary" class="mt-4">
-        Add to Cart
-      </button>
-    </div>
-  </div>
-</mat-card> -->

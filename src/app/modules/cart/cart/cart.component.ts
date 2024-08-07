@@ -29,22 +29,42 @@ export class CartComponent {
       next: (data) => {
         this.cartItems = data;
         console.log(data);
-        this.totalPrice = this.getTotalPrice();
+        this.getTotalPrice();
       },
       error: (error) => console.error(error),
     });
   }
 
-  getTotalPrice(): number {
-    let total = 0;
-    for (let item of this.cartItems) {
-      total += item.price;
+  getTotalPrice(): void {
+    this.totalPrice = this.cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  }
+
+  increaseQuantity(item: CartItems) {
+    item.quantity++;
+    this.getTotalPrice();
+  }
+
+  decreaseQuantity(item: CartItems) {
+    if (item.quantity > 1) {
+      item.quantity--;
+      this.getTotalPrice();
     }
-    return total;
+  }
+
+  removeItem(item: CartItems) {
+    this.cartService.removeFromCart(item).subscribe(() => {
+      this.cartItems = this.cartItems.filter((i) => i.id !== item.id);
+      this.getTotalPrice();
+    });
   }
 
   clearCart(): void {
     this.cartService.clearCart().subscribe();
+    this.cartItems = [];
+    this.totalPrice = 0;
   }
 
   checkout() {}

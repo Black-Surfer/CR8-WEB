@@ -17,9 +17,9 @@ export class ProductDetailComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   productService = inject(ProductsService);
   cartService = inject(CartService);
+  snackbar = inject(MatSnackBar);
   product: Product;
   quantity: number = 1;
-  snackbar: MatSnackBar;
 
   ngOnInit(): void {
     this.product = {} as Product;
@@ -29,10 +29,18 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  addToCart(product: Product): void {
-    this.cartService.addToCart(product).subscribe({
+  addToCart(): void {
+    this.cartService.addToCart(this.product).subscribe({
       next: () => {
         this.snackbar.open('Product added to cart', '', {
+          duration: 2000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top',
+        });
+      },
+      error: (err) => {
+        console.error('Error adding product to cart', err);
+        this.snackbar.open('Failed to add product to cart', '', {
           duration: 2000,
           horizontalPosition: 'right',
           verticalPosition: 'top',

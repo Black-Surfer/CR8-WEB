@@ -20,6 +20,10 @@ export class CartService {
     return this.http.get<CartItems[]>(this.apiUrl);
   }
 
+  removeFromCart(item: CartItems): Observable<void> {
+    return this.http.delete<void>(this.apiUrl);
+  }
+
   clearCart(): Observable<void> {
     return this.http.delete<void>(this.apiUrl);
   }

@@ -1,4 +1,4 @@
-<div class="container mx-auto p-4">
+<!-- <div class="container mx-auto p-4">
   <h1 class="text-2xl font-bold mb-4">Your cart</h1>
   <div class="bg-white shadow-md rounded-lg p-4">
     <ul class="space-y-4">
@@ -31,4 +31,204 @@
       </button>
     </div>
   </div>
+</div> -->
+
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-4">Your Cart</h1>
+  <div class="bg-white shadow-md rounded-lg p-4">
+    <ul class="space-y-4">
+      <li
+        *ngFor="let item of cartItems"
+        class="flex flex-col md:flex-row justify-between items-center border-b pb-4"
+      >
+        <div class="flex items-center space-x-4 w-full md:w-1/2">
+          <img
+            [src]="item.imageURL"
+            alt="{{ item.name }}"
+            class="w-16 h-16 md:w-24 md:h-24 object-cover rounded-lg"
+          />
+          <div>
+            <h6 class="text-lg font-semibold">{{ item.name }}</h6>
+            <p class="text-gray-500">{{ item.type }}</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4 mt-2 md:mt-0 w-full md:w-1/4">
+          <div class="flex items-center mt-2">
+            <button
+              class="text-center text-3xl"
+              (click)="decreaseQuantity(item)"
+            >
+              -
+            </button>
+            <label
+              class="w-[40px] h-[25px] border-2 text-center flex justify-center items-center mx-[10px]"
+              >{{ item.quantity }}</label
+            >
+            <button
+              class="text-center text-3xl"
+              (click)="increaseQuantity(item)"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex items-center space-x-4 mt-2 md:mt-0 w-full md:w-1/4 justify-between"
+        >
+          <span class="text-gray-500">{{
+            item.price * item.quantity | currency : "USD"
+          }}</span>
+          <button
+            class="text-red-500 hover:text-red-700 mt-2 md:mt-0 text-2xl"
+            (click)="removeItem(item)"
+          >
+            x
+          </button>
+        </div>
+      </li>
+
+      <li class="flex justify-between items-center border-t pt-4">
+        <span class="font-medium">Total (USD)</span>
+        <span class="text-gray-500">{{ totalPrice | currency : "USD" }}</span>
+      </li>
+    </ul>
+
+    <div class="flex justify-end space-x-2 mt-4">
+      <button
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+        (click)="clearCart()"
+      >
+        Clear
+      </button>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        (click)="checkout()"
+      >
+        Checkout
+      </button>
+    </div>
+  </div>
 </div>
+
+<!-- <section class="h-100 h-custom bg-[#d2c9ff]">
+  <div class="container py-5 h-100">
+    <div class="row flex justify-center items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2 rounded-lg">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div class="flex justify-between items-center mb-5">
+                    <h1 class="font-bold mb-0">Shopping Cart</h1>
+                    <h6 class="mb-0 text-muted">
+                      {{ cartItems.length }} items
+                    </h6>
+                  </div>
+                  <hr class="my-4" />
+
+                  <div
+                    *ngFor="let item of cartItems"
+                    class="mb-4 flex justify-between items-center"
+                  >
+                    <div class="col-md-2 col-lg-2 col-xl-2">
+                      <img
+                        [src]="item.imageURL"
+                        class="img-fluid rounded-3"
+                        alt="{{ item.name }}"
+                      />
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3">
+                      <h6 class="text-muted">{{ item.name }}</h6>
+                      <h6 class="mb-0">{{ item.description }}</h6>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-2 flex">
+                      <button
+                        class="btn btn-link px-2"
+                        (click)="decreaseQuantity(item)"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <input
+                        min="0"
+                        name="quantity"
+                        [(ngModel)]="item.quantity"
+                        type="number"
+                        class="form-control form-control-sm"
+                      />
+                      <button
+                        class="btn btn-link px-2"
+                        (click)="increaseQuantity(item)"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                      <h6 class="mb-0">{{ item.price | currency : "USD" }}</h6>
+                    </div>
+                    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                      <a href="#" class="text-muted" (click)="removeItem(item)"
+                        ><i class="fas fa-times"></i
+                      ></a>
+                    </div>
+                  </div>
+
+                  <hr class="my-4" />
+
+                  <div class="pt-5">
+                    <h6 class="mb-0">
+                      <a href="#" class="text-body"
+                        ><i class="fas fa-long-arrow-alt-left me-2"></i>Back to
+                        shop</a
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 bg-body-tertiary">
+                <div class="p-5">
+                  <h3 class="font-bold mb-5 mt-2 pt-1">Summary</h3>
+                  <hr class="my-4" />
+                  <div class="flex justify-between mb-4">
+                    <h5 class="text-uppercase">items {{ cartItems.length }}</h5>
+                    <h5>{{ totalPrice | currency : "USD" }}</h5>
+                  </div>
+                  <h5 class="text-uppercase mb-3">Shipping</h5>
+                  <div class="mb-4 pb-2">
+                    <select class="form-control">
+                      <option value="1">Standard-Delivery- $5.00</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                      <option value="4">Four</option>
+                    </select>
+                  </div>
+                  <h5 class="text-uppercase mb-3">Give code</h5>
+                  <div class="mb-5">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form3Examplea2"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="form3Examplea2"
+                        >Enter your code</label
+                      >
+                    </div>
+                  </div>
+                  <hr class="my-4" />
+                  <div class="flex justify-between mb-5">
+                    <h5 class="text-uppercase">Total price</h5>
+                    <h5>{{ totalPrice | currency : "USD" }}</h5>
+                  </div>
+                  <button type="button" class="btn btn-dark btn-block btn-lg">
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->

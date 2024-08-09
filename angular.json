@@ -50,7 +50,8 @@
               "src/styles/vendors.scss",
               "src/@fuse/styles/main.scss",
               "src/styles/styles.scss",
-              "src/styles/tailwind.scss"
+              "src/styles/tailwind.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": []
           },
@@ -107,7 +108,10 @@
               "src/favicon-32x32.png",
               "src/assets"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            ],
             "scripts": []
           }
         }

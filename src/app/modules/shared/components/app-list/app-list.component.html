@@ -5,7 +5,7 @@
     <div
       *ngFor="let item of listResult"
       [routerLink]="['/product-detail', item.id]"
-      class="bg-white rounded-lg shadow-lg p-4 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:bg-[#D9D9D9] hover:scale-105"
+      class="bg-white rounded-lg shadow-lg p-4 flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 hover:bg-gray-200 hover:scale-105 transform transition duration-300 ease-in-out"
     >
       <img
         [src]="item.imageURL"

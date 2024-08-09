@@ -1,10 +1,114 @@
-<!-- Copy Home Page Design Here -->
+<nav class="bg-gray-100 shadow-md">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <div class="text-2xl font-bold text-gray-800">
+      <a routerLink="/">PAC 8</a>
+    </div>
+
+    <button
+      class="lg:hidden text-gray-800 focus:outline-none"
+      (click)="isMenuOpen = !isMenuOpen"
+      aria-label="Toggle navigation"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"
+        ></path>
+      </svg>
+    </button>
+
+    <div class="hidden lg:flex lg:items-center lg:space-x-6">
+      <a routerLink="/home" class="text-gray-700 hover:text-gray-900">Home</a>
+      <a routerLink="/search" class="text-gray-700 hover:text-gray-900"
+        >Product</a
+      >
+      <a routerLink="/about-us" class="text-gray-700 hover:text-gray-900"
+        >About Us</a
+      >
+      <a routerLink="/services" class="text-gray-700 hover:text-gray-900"
+        >Services</a
+      >
+      <button
+        routerLink="/sign-up"
+        class="bg-transparent border border-[#160020] text-[#160020] px-4 py-2 rounded hover:bg-[#160020] hover:text-white transition duration-300"
+      >
+        Register
+      </button>
+      <button
+        routerLink="/sign-in"
+        class="bg-transparent border border-[#160020] text-[#160020] px-4 py-2 rounded hover:bg-[#160020] hover:text-white transition duration-300"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="lg:hidden fixed inset-y-0 right-0 bg-gray-100 w-64 p-4 transition-transform transform"
+    [class.translate-x-full]="!isMenuOpen"
+    [class.translate-x-0]="isMenuOpen"
+  >
+    <button
+      class="text-gray-800 absolute top-4 right-4 text-2xl"
+      (click)="isMenuOpen = false"
+      aria-label="Close navigation"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+    <div class="space-y-4 mt-8">
+      <a routerLink="/home" class="block text-gray-700 hover:text-gray-900"
+        >Home</a
+      >
+      <a routerLink="/product" class="block text-gray-700 hover:text-gray-900"
+        >Product</a
+      >
+      <a routerLink="/about-us" class="block text-gray-700 hover:text-gray-900"
+        >About Us</a
+      >
+      <a routerLink="/services" class="block text-gray-700 hover:text-gray-900"
+        >Services</a
+      >
+      <button
+        routerLink="/register"
+        class="block text-[#160020] border border-[#160020] px-4 py-2 rounded hover:bg-[#160020] hover:text-white transition duration-300"
+      >
+        Register
+      </button>
+      <button
+        routerLink="/login"
+        class="block text-[#160020] border border-[#160020] px-4 py-2 rounded hover:bg-[#160020] hover:text-white transition duration-300"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</nav>
+
 <div
   class="pr-8 pl-8 pb-8 pt-8 lg:pr-32 lg:pl-32 flex flex-col justify-center items-center bg-gradient-to-r from-[#240032] via-[#160120] to-[#0E0313] rounded-b-[3rem] gap-y-[2rem]"
 >
-  <div class="p-64 bg-[#FDF8FF] w-full rounded-[2rem] shadow-md">
-    <!-- Your carousel content goes here -->
-  </div>
+  <div class="p-64 bg-[#FDF8FF] w-full rounded-[2rem] shadow-md"></div>
   <div class="w-full flex flex-col">
     <h1 class="text-[#FDF8FF] text-2xl font-normal">Steps:</h1>
 
@@ -54,9 +158,9 @@
         Contact Us
       </button>
     </div>
-    <div class="w-full lg:w-1/2 p-8 bg-[#D9D9D9] rounded-[2rem] shadow-md">
-      <!-- Your carousel content goes here -->
-    </div>
+    <div
+      class="w-full lg:w-1/2 p-8 bg-[#D9D9D9] rounded-[2rem] shadow-md"
+    ></div>
   </div>
 </div>
 

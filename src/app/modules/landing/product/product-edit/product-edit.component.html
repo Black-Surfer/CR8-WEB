@@ -1,0 +1,80 @@
+<div class="w-full h-full">
+  <nav class="flex items-center justify-between p-4 bg-gray-100 shadow-md">
+    <div class="flex items-center space-x-6">
+      <button class="text-red-500 hover:text-red-700">
+        <i class="fa fa-sign-out"></i>
+        Exit
+      </button>
+
+      <div class="border-l-2 border-gray-300 h-6"></div>
+
+      <div class="flex items-center space-x-4">
+        <button class="flex flex-col items-center">
+          <i class="fas fa-undo mb-1"></i>
+          Undo
+        </button>
+        <button class="flex flex-col items-center">
+          <i class="fas fa-redo mb-1"></i>
+          Redo
+        </button>
+      </div>
+
+      <div class="border-l-2 border-gray-300 h-6"></div>
+
+      <div class="flex items-center space-x-4">
+        <button class="flex flex-col items-center">
+          <i class="fas fa-save mb-1"></i>
+          Save
+        </button>
+        <button class="flex flex-col items-center">
+          <i class="fa fa-share-alt mb-1"></i>
+          Share
+        </button>
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <button
+        class="px-3 py-2 rounded-[10px] text-blue-500 hover:text-blue-700 border-blue-500 border-2"
+      >
+        Preview
+      </button>
+      <button
+        class="px-3 py-2 rounded-[10px] text-green-500 hover:text-green-700 border-green-500 border-2"
+      >
+        Proceed
+      </button>
+    </div>
+  </nav>
+
+  <div class="flex h-screen">
+    <div class="w-1/12 min-w-[100px] bg-gray-200 p-4 space-y-6">
+      <div class="flex flex-col items-center cursor-pointer space-y-4">
+        <i class="fas fa-th-large text-xl"></i>
+        <span>Layout</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer space-y-4">
+        <i class="fas fa-font text-xl"></i>
+        <span>Text</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer space-y-4">
+        <i class="fas fa-image text-xl"></i>
+        <span>Photo</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer space-y-4">
+        <i class="fas fa-sticky-note text-xl"></i>
+        <span>Sticker</span>
+      </div>
+
+      <div class="flex flex-col items-center cursor-pointer space-y-1">
+        <i class="fas fa-save text-xl"></i>
+        <span>Saved Design</span>
+      </div>
+    </div>
+
+    <div class="flex-grow bg-white p-6 overflow-auto"></div>
+  </div>
+</div>
